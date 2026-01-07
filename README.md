@@ -1,6 +1,6 @@
 # m3u8-downloader
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jakiya99/m3u8-downloader/blob/main/m3u8_downloader.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/superyngo/m3u8d/blob/main/m3u8_downloader.ipynb)
 
 Download M3U8 streams and convert to MP4 using Google Colab.
 
