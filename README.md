@@ -21,12 +21,16 @@ Run the first cell to mount your Google Drive. Files will be saved to `/content/
 
 Run the second cell to download the m3u8-downloader binary.
 
-### 3. Single File Download
+## 3. Path Setting
+
+Set output_dir or use defalut: `/drive/MyDrive/m3u8d/`.
+
+### 4. Single File Download
 
 - Enter the M3U8 URL in `M3u8_link`
 - Enter the output filename in `filename` (e.g., `video.mp4`)
 
-### 4. Batch Download
+### 5. Batch Download
 
 Enter filename and URL pairs in plain text format using `\n` for line breaks:
 
@@ -44,6 +48,9 @@ Each pair should be:
 
 Failed downloads will be skipped, and the process continues with remaining files.
 
-## Output Location
+## Download Records
 
-All downloaded files are saved to: `/content/drive/MyDrive/m3u8d/`
+Succesful download will be recorded to output_dir/downloaded.txt in format:
+[2026-01-07 12:34:56] video.mp4 | https://example.com/stream.m3u8
+
+
