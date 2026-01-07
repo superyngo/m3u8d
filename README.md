@@ -14,23 +14,33 @@ Download M3U8 streams and convert to MP4 using Google Colab.
 ## Usage
 
 ### 1. Mount Google Drive
+
 Run the first cell to mount your Google Drive. Files will be saved to `/content/drive/MyDrive/m3u8d/`.
 
 ### 2. Download Tool
+
 Run the second cell to download the m3u8-downloader binary.
 
 ### 3. Single File Download
+
 - Enter the M3U8 URL in `M3u8_link`
 - Enter the output filename in `filename` (e.g., `video.mp4`)
 
 ### 4. Batch Download
-Enter filename and URL pairs in plain text format:
+
+Enter filename and URL pairs in plain text format using `\n` for line breaks:
+
 ```
-video1.mp4
-https://example.com/stream1.m3u8
-video2.mp4
-https://example.com/stream2.m3u8
+video1.mp4\nhttps://example.com/stream1.m3u8\nvideo2.mp4\nhttps://example.com/stream2.m3u8
 ```
+
+Each pair should be:
+
+- Filename (e.g., `video1.mp4`)
+- `\n` (newline separator)
+- M3U8 URL
+- `\n` (newline separator)
+- Next filename...
 
 Failed downloads will be skipped, and the process continues with remaining files.
 
