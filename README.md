@@ -10,27 +10,40 @@ Download M3U8 streams and convert to MP4 using Google Colab.
 - Batch download with filename/URL pairs
 - Automatic Google Drive integration
 - Uses [llychao/m3u8-downloader](https://github.com/llychao/m3u8-downloader) for fast downloads
+- Alternative yt-dlp downloader with aria2c acceleration
+- Extract M3U8 links from webpage URLs
 
 ## Usage
 
 ### 1. Mount Google Drive
 
-Run the first cell to mount your Google Drive. Files will be saved to `/content/drive/MyDrive/m3u8d/`.
+Run the first cell to mount your Google Drive. Files will be saved to `drive/MyDrive/m3u8d/`.
 
-### 2. Download Tool
+### 2. Download Tools
 
-Run the second cell to download the m3u8-downloader binary.
+Run the second cell to install:
+- m3u8-downloader binary
+- yt-dlp with curl-cffi support
 
-## 3. Path Setting
+### 3. Get M3U8 Links (Optional)
 
-Set output_dir or use defalut: `/drive/MyDrive/m3u8d/`.
+Enter a webpage URL to extract M3U8 links from the page source.
 
-### 4. Single File Download
+### 4. Path Setting
 
-- Enter the M3U8 URL in `M3u8_link`
-- Enter the output filename in `filename` (e.g., `video.mp4`)
+Set `output_dir` or use default: `drive/MyDrive/m3u8d/`
 
-### 5. Batch Download
+### 5. Download Options
+
+#### m3u8-downloader (Red/Blue cells)
+- **Single File Download** - Enter M3U8 URL and filename
+- **Batch Download** - Enter filename/URL pairs
+
+#### yt-dlp (Green/Orange cells)
+- **Single File Download (yt-dlp)** - Uses aria2c with 16 connections
+- **Batch Download (yt-dlp)** - Same batch format with yt-dlp
+
+### Batch Format
 
 Enter filename and URL pairs in plain text format using `\n` for line breaks:
 
@@ -39,7 +52,6 @@ Enter filename and URL pairs in plain text format using `\n` for line breaks:
 ```
 
 Each pair should be:
-
 - Filename (e.g., `video1.mp4`)
 - `\n` (newline separator)
 - M3U8 URL
@@ -50,7 +62,7 @@ Failed downloads will be skipped, and the process continues with remaining files
 
 ## Download Records
 
-Succesful download will be recorded to output_dir/downloaded.txt in format:
+Successful downloads are recorded to `output_dir/downloaded.txt` in format:
+```
 [2026-01-07 12:34:56] video.mp4 | https://example.com/stream.m3u8
-
-
+```
