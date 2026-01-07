@@ -31,7 +31,7 @@ Run the second cell to download the m3u8-downloader binary.
 Enter filename and URL pairs in plain text format using `\n` for line breaks:
 
 ```
-video1.mp4\nhttps://example.com/stream1.m3u8\nvideo2.mp4\nhttps://example.com/stream2.m3u8
+"video1.mp4\nhttps://example.com/stream1.m3u8\nvideo2.mp4\nhttps://example.com/stream2.m3u8"
 ```
 
 Each pair should be:
